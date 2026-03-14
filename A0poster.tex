@@ -1,0 +1,108 @@
+\documentclass[twocolumns,portrait,a0,final]{a0poster}
+\input{pkgdef+poster.tex}
+
+%INFORMAÇÃO PÔSTER
+\author{Autor}
+\title{Título}
+\date{; data@email.com}
+
+\begin{document}
+\pagestyle{fancy}
+{\color{verdeOficial}\hrule height 5pt}
+\vspace{0.5cm}
+\begin{minipage}{10cm}
+\begin{center}
+	\includegraphics[width=7cm]{./img/logo-ifpe.png}
+\end{center}
+\end{minipage}
+\begin{minipage}{63cm}
+	\begin{center}% PREENCHER A IDENTIFICAÇÃO DO PÔSTER+AUTOR+E-MAIL ABAIXO
+		{\Huge\bfseries Título Gigante do Poster}\\%
+		{\LARGE Autorão Exemplar 1\footnote{data1@email.com}; Autorão Exemplar 2\footnote{data2@email.com};Autorão Exemplar 3\footnote{data3@email.com}}\\%
+	\end{center}
+\end{minipage}
+\begin{minipage}{10cm}
+	\begin{flushleft}
+		\includegraphics[width=8cm]{./img/logo-do-evento.png}
+	\end{flushleft}
+\end{minipage}
+{\color{verdeOficial}\hrule height 5pt}
+\ \\
+{\color{verdeOficial}\hrule height 5pt}
+\ \\
+
+%Introdução, Metodologia, Resultados e Discussão, Conclusão e Referências 
+%INÍCIO DO TEXTO EM DUAS COLUNAS. SUBSTITUIR O COMANDO \lispum[1] PELO TEXTO.
+\begin{multicols}{2}
+\begin{tcolorbox}[title=\section{INTRODUÇÃO}]
+	\lipsum[1]
+\end{tcolorbox}
+\vspace{1cm}
+
+\begin{tcolorbox}[title=\section{METODOLOGIA}]
+	\lipsum[1]
+\end{tcolorbox}
+\vspace{1cm}
+
+\begin{tcolorbox}[title=\section{RESULTADOS E DISCUSSÃO}]
+	\lipsum[1]
+\end{tcolorbox}
+\vspace{1cm}
+
+%POSICIONAMENTO DE IMAGENS
+%Adequar às necessidades
+% 1. DUAS IMAGENS LADO A LADO (larguras iguais)
+\begin{minipage}{0.48\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{./img/imagem-exemplo.jpeg}
+	\captionof{figure}{Legenda da imagem 1}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{./img/grafico-pizza.jpeg}
+	\captionof{figure}{Legenda da imagem 2}
+\end{minipage}
+
+\vspace{0.5cm}
+
+% 2. IMAGEM ABAIXO DA OUTRA (largura total)
+\begin{center}
+	\includegraphics[width=\linewidth]{./img/imagem-exemplo.jpeg}
+	\captionof{figure}{Legenda da imagem 1}
+	
+	\vspace{0.5cm}
+	
+	\includegraphics[width=\linewidth]{./img/grafico-pizza.jpeg}
+	\captionof{figure}{Legenda da imagem 2}
+\end{center}
+
+% 3. IMAGEM ABAIXO DA OUTRA (largura customizada)
+\begin{center}
+	\includegraphics[width=0.8\linewidth]{./img/imagem-exemplo.jpeg}
+	\captionof{figure}{Legenda da imagem 1}
+	
+	\vspace{0.5cm}
+	
+	\includegraphics[width=0.8\linewidth]{./img/grafico-pizza.jpeg}
+	\captionof{figure}{Legenda da imagem 2}
+\end{center}
+%POSICIONAMENTO DE IMAGENS
+
+\begin{tcolorbox}[title=\section{CONCLUSÃO}]
+	\cite{loki2019} e depois \cite{thor2020}
+\end{tcolorbox}
+\vspace{1cm}
+
+%PRODUZIR AS REFERÊNCIAS
+\begin{tcolorbox}
+	\renewcommand{\bibname}{Referências}
+	\bibliographystyle{abntex2-alf}
+	\bibliography{referencias-poster}
+\end{tcolorbox}
+\vspace{1cm}
+
+\agradecimentos{Agradeço a ... \lipsum[2]}
+
+\end{multicols}
+\end{document}

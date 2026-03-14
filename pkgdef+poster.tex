@@ -1,0 +1,91 @@
+%IDIOMAS (PT-BR) E CODIFICAÇÃO DE FONTES
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+%OPÇÃO DE FONTES 1 (Padrão)
+\usepackage{DejaVuSans}
+\renewcommand*\familydefault{\sfdefault}
+%OPÇAO DE FONTE 2
+\usepackage{lmodern}
+
+%DEFINIÇÃO DO VERDE OFICIAL DOS IFs
+\usepackage[svgnames]{xcolor}
+\definecolor{verdeOficial}{HTML}{359830}
+
+%CLÁSSICO LOREM IPSUM
+\usepackage{lipsum}
+
+%LEGENDAS DAS IMAGENS SEM O AMBIENTE FIGURE
+\usepackage{caption}
+
+%IMAGENS
+\usepackage{graphicx}
+
+%SEM LINHA DIVISÓRIA PARA \footnote.
+\renewcommand{\footnoterule}{}
+
+%URLs
+\usepackage{xurl}
+
+
+%TAMANHO DO PAPEL CONFORME ABNT 15437
+%Tam. mín. das margens é 2.5. Padrão para o modelo: como abaixo.
+\usepackage[paperwidth=90cm,%
+			paperheight=120cm,%
+			top=2cm,%
+			left=3.5cm,%
+			right=3.5cm,%
+			bottom=3.5cm,%
+			]{geometry}
+
+%TEXTO EM DUAS COLUNAS
+\usepackage{multicol}
+\setlength{\columnsep}{100pt}         % Distância entre as colunas
+\setlength{\columnseprule}{3pt}       % Espessura da linha divisória
+\renewcommand{\columnseprulecolor}{\color{verdeOficial}}	% Cor da linhas divisória
+
+%REFERÊNCIAS E CITAÇÕES
+\RequirePackage[alf,
+				abnt-emphasize=bf,%
+				abnt-etal-list=3,%
+				abnt-etal-text=emph,%
+				abnt-missing-year=sd,%
+				abnt-repeated-author-omit=yes,%
+				abnt-repeated-title-omit=yes,%
+				abnt-thesis-year=final,%
+				abnt-doi=link,%
+				]{abntex2cite}
+%ALTERAR O TAMANHO DA FONTE APÓS BIBLIOG. COMPILADA
+\let\oldthebibliography\thebibliography
+\let\endoldthebibliography\endthebibliography
+\renewenvironment{thebibliography}[1]
+{\normalsize\oldthebibliography{#1}}
+{\endoldthebibliography}
+
+%CAIXAS DE TEXTO PADRÃO (SEÇÕES DO PÔSTER)
+\usepackage{tcolorbox}
+\tcbuselibrary{many}
+\tcbset{colback=green!5!white,%
+		colframe=green!60!black,%
+		fonttitle=\bfseries\large,%
+		toprule=5mm,%
+		rightrule=3mm,%
+}
+
+%CAIXA DE AGRADECIENTOS
+\usepackage{awesomebox}
+\newcommand{\agradecimentos}[1]{%
+	\awesomebox[verdeOficial][][\textbf{\color{verdeOficial}{Agradecimentos}}]%
+	{2pt}{\faThumbsUp}{verdeOficial}{#1}%
+}
+
+%DEFINIÇÃO DO RODAPÉ (LINHA)
+%(RE)Fazer o cabeçalho usando apenas esse pacote, sem o minipage.
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\footrule}{%
+	{\color{verdeOficial}\hrule width\headwidth height\footrulewidth}%
+	\vskip\footruleskip%
+}
+\fancyfoot{}
